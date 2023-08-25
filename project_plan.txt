@@ -1,0 +1,13 @@
+I want to have a single GUI window with multiple drop downs that also have a search function.
+There will be a couple of widgets displaying current price, percent change for that day and selected date range.
+
+The drop downs will allow users to select stocks based on their full name or ticker and select a date range.
+
+The lower right section of the GUI screen will display the matplotlib chart
+
+Libraries to use:
+    - yfinance
+    - matplotlib
+    - PyQt6
+    - datetime
+
