@@ -1,2 +1,2 @@
 # stockr
-A new tool building upon older models to generate and supply stock data information to beginner investors.
+A new tool building upon previous editions, aiming to generate accessible stock data information/visuals to beginner investors.
