@@ -22,16 +22,16 @@ window.root.protocol("WM_DELETE_WINDOW", lambda: on_closing(window))
         # Parent frames -> sum = 1135 (old)
 main_notebook_frame = guiFrames(window, "main_notebook_frame", width=900, height=510, 
                                 use_place=True, relx=1, rely=0, anchor='ne', x=-10, y=20)
-main_toggle_frame = guiFrames(window, "main_toggle_frame", width=260, height=500, 
-                              use_place=True, relx=0, rely=0, anchor='nw', x=20, y=20)
-main_supplementary_frame = guiFrames(window, "main_supplementary_frame",width=740, height = 240, 
+main_toggle_frame = guiFrames(window, "main_toggle_frame", width=260, height=503,
+                              use_place=True, relx=0, rely=0, anchor='nw', x=20, y=20,)
+main_supplementary_frame = guiFrames(window, "main_supplementary_frame", width=740, height = 240, 
                                     use_place = True, relx=0, rely=1, x=20, y=-20, anchor='sw')
 main_recommendations_frame = guiFrames(window, "main_recommendations_frame", width=395, height=240,
                             use_place=True, relx=1, rely=1, x=-20, y=-20, anchor='se')
         # Nested frames
 toggle_frame = guiFrames(window, "toggle_frame", width=250, height=490, 
                          parent_frame=main_toggle_frame.frame_name, use_place=True,
-                        anchor='center', relx=0.5, rely=0.5, bg='gray25')
+                        anchor='center', relx=0.5, rely=0.5)
         # Notebook creation for main_frame
 notebook = ttk.Notebook(window.frames['main_notebook_frame'])
 notebook.pack(fill="both", expand=True)

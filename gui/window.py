@@ -14,6 +14,7 @@ def on_closing(win):
 class guiWindow:
     def __init__(self):
         self.root = tk.Tk()
+        # Override default theme below if desired
         apply_theme(self.root)
         # ----------------------
         self.frames={}
