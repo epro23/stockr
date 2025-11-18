@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import yfinance as yf
+from data.functions import adjust_large_metrics
 
 class guiVisuals:
     def __init__(self, guiWindow, type: str, ticker: str, target_frame, tab_name=None):
@@ -75,6 +76,7 @@ class guiVisuals:
 
         # Clean up any extra index columns
         df = self.stock_data.drop(columns=["level_0", "index"], errors="ignore")
+        df["Volume"] = df["Volume"].apply(adjust_large_metrics)
         self.build_treeview(container, df, style="Base.Treeview")
 
         self.guiWindow.main_visuals["finance_tables"][self.ticker] = self.frame_name
@@ -140,9 +142,13 @@ class guiVisuals:
             "Profit Margins": info.get("profitMargins"),
             "Gross Profits": info.get("grossProfits"),
             "Free Cashflow": info.get("freeCashflow"),
-            "Debt to Equity": info.get("debtToEquity"),
+            "Debt to Equity Ratio": info.get("debtToEquity"),
             "Beta": info.get("beta"),
         }
+
+        for i in metrics_list.values():
+            if isinstance(i, (int, float)):
+                metrics_list = {k: adjust_large_metrics(v) if isinstance(v, (int, float)) else v for k, v in metrics_list.items()}
 
         df = pd.DataFrame(list(metrics_list.items()), columns=["Metric", "Value"])
         self.build_treeview(container, df, style="Metrics.Treeview", anchor="w", padding=(5, 5))

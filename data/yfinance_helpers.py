@@ -56,6 +56,9 @@ class dataOperations:
                 df["Date"] = df["Date"].dt.strftime('%Y-%m-%d %H:%M')  # Keep hours + minutes
 
         df.columns.name = "Data Index"
+
+        #adjust_large_numbers(df)  # Assuming this function is defined elsewhere
+        
         self.stock_data[ticker_key] = df
 
         return self.stock_data

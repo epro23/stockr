@@ -3,7 +3,7 @@ from data.yfinance_helpers import dataOperations
 
 def add_ticker(window, stock_history_widget, value):
     ticker = (value or "").strip().upper()
-    if not (ticker and 1 <= len(ticker) <= 6):
+    if not (ticker and 1 <= len(ticker) <= 7):
         return
 
     if ticker in window.stock_tickers:
