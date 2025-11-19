@@ -5,8 +5,6 @@ A new GUI application building upon older methodology, acting as a resource to c
 
 `stockr` scrapes historical stock data, once per user input, via a yfinance API call. The data is stored in the session to generate a series of tables and figures via custom `pandas`, `Matplotlib`, and `tkinter` API calls which are subsequently displayed on the tkinter GUI interface.
 
-`stockr` provides a simple GUI front-end that fetches historical stock data (via `yfinance`), processes it with `pandas`, and visualizes it with `matplotlib` (and optional seaborn). The application was built as a lightweight, distributable desktop tool so non-technical users can explore stock price history and basic technical indicators.
-
 ![alt text](https://github.com/epro23/stockr/blob/main/images/chart_screen.png "Chart Tab")
 
 ### Accessing stockr
